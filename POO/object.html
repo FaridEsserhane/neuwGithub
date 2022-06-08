@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Go!</button>
+    <script>
+        function Book(mytitle, myisbn, myimail){
+                this.title = mytitle,
+                this.isbn = myisbn,
+                this.genre = myimail
+        }
+        Book.prototype.bookDetails = function(){
+                    console.log(`le livre s'appelle :  ${this.title} et le numero : ${this.isbn} `)
+                }
+        /* 
+        this.details = function(){
+                    console.log(`le livre s'appelle :  ${this.title} et le numero : ${this.isbn} `)
+                }
+        */
+        let mybook1 = new Book("teste1", "88946",{"cle":"valeur"});
+        let mybook2 = new Book("teste2", "88946",{"espoir":0, "future":"no"});
+
+        function Journal(title,  genre, isbn, author){
+            Book.call(this,title, genre, isbn)
+            this.author = author
+        }
+
+
+        Journal.prototype = Object.create(Book.prototype)
+        Journal.prototype.constructor = Journal
+
+        let myjournall = new Journal("micky", "comic", "876346", "disnay")
+        
+        //console.log(mybook1.bookDetails())
+        document.write(myjournall.author)
+
+
+        /*###############*/
+
+        class Vehicule {
+            constructor(marque, model, nbroures, cylindree){
+                this.marque = marque
+                this.model = model
+                this.nbroures = nbroures
+                this.cylindree = cylindree
+            }
+            showDetails(){
+                return `Ma ${this.model} de chez ${this.marque} a ${this.cylindree} cheuveaux et ${this.nbroures} roues` 
+            }
+        }
+        let vehecule1 = new Vehicule("Audi", "Q4", 4 , 160)
+        console.log(vehecule1.showDetails())
+
+        class Voiture extends Vehicule{
+            constructor(marque,model,nbroures,cylindree){
+                super(marque,model)
+                this.nbroures = 6
+                this.cylindree = 110
+            }
+        }
+        let tuture = new Voiture("Renult", "R6", 4 , 4)
+        console.log(tuture)
+    </script>
+</body>
+</html>
