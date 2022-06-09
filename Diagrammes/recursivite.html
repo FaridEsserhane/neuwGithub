@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <script src="src/js/main.js"></script>
+    <title>Récursivité HTML</title>
+</head>
+<body>
+<canvas>
+
+</canvas>
+    <!--
+        <article>
+            <h1>Itération</h1>
+            <h1>La récurtion  </h1>
+            <h2>Case de base</h2>
+            <h2>Cas de propagation</h2>
+        </article>
+    -->
+    <script>
+        /*
+        function countDown(number){
+            //display the number 
+            console.log(number);
+            const newNumber = number - 1;
+            if (newNumber >= 0 ) {
+                countDown(newNumber);
+            }
+        }
+        countDown(10);
+
+        function factorial(x) {
+            if(x===0){
+                return 1;
+            } else {
+                console.log(`j'appelle factotial de ${x-1}`)
+                return x*factorial(x-1);
+            }
+        }
+        const num = 10 ; //des petits chiffres 170 c'est le maximum
+        if(num>0){
+            let result = factorial(num)
+            console.log(`la factorielle de ${num} est ${result}`)
+        }
+        //calculer la somme des chiffres d'un nombr
+        function sum_of_digits(n){
+            if ( n===0 ) return 0;
+                return (n%10 + sum_of_digits(parseInt(n/10)))
+        }
+        let mynum = 2456 ;
+        var myresult = sum_of_digits(mynum);
+        console.log(myresult)
+        //decimal to bonaire  
+        function dec2bin(n){
+            if (n === 0) {
+                return 0
+            } else {
+                return(n%2 + 10*dec2bin(parseInt(n/2)))
+            }
+        }
+        console.log(dec2bin(5))*/
+
+
+        function Fibo(ber) {
+            try {
+                if (ber in [0,1]) {
+                    return ber;
+                } else {
+                    return Fibo(ber-1) + Fibo(ber-2);
+                }
+                
+            } catch  {
+                console.log("Not define");
+            }
+        }
+        let max = 20; 
+        for(i=0;i<max;i++){
+            console.log(Fibo(i));
+        }
+        
+    </script>
+
+</body>
+</html>

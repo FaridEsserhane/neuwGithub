@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <script src="src/js/main.js"></script>
+    <style>
+        *{margin: 0; padding: 0; }
+    </style>
+    <title>
+        Canva HTML</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="500" height="250" style="border: 1px solid orange;">
+        vous n'avez pas de canvas disponible, changez de navigateur svp !
+    </canvas>
+    <script>
+        let canvas = document.getElementById("mycanvas");
+        let ctx = canvas.getContext('2d');
+        ctx.lineWidth = 10 ;
+        ctx.strokeStyle = "orange";
+        ctx.strokeRect(50,50,350,100);
+        ctx.fillStyle="red";
+        ctx.fillRect(10,10,50,200);
+        ctx.clearRect(20,20,100,60);
+        ctx.beginPath();
+        ctx.strokeStyle = "#0F0";
+        ctx.lineWidth = 20 ;
+        ctx.moveTo(500,250);
+        ctx.lineTo(450,200);
+        ctx.lineTo(400,250);
+        ctx.moveTo(30,30);
+        ctx.lineTo(30,60);
+        ctx.stroke();
+
+//        function draw_triangle(x,y,color){
+//        ctx.beginPath();
+//        ctx.strokeStyle = color ;
+//        ctx.lineWidth = 2 ;
+//        ctx.moveTo(x,y);
+//        ctx.lineTo(x-50,y+50);
+//        ctx.lineTo(x+50,y+50);
+//        ctx.lineTo(x,y);
+//        ctx.closePath();
+//        ctx.stroke();
+//    }
+//    draw_triangle(250,50,"blue");
+//    //Arc de cercle vert
+//    ctx.beginPath();
+//    ctx.lineWidth = 1;
+//    ctx.strokeStyle = '#4C8';
+//    ctx.arc(350,50,35,0.8*Math.PI, 2*Math.PI);
+//    ctx.closePath();
+//    ctx.stroke();
+//    //Cercle complet violet
+//    ctx.beginPath();
+//    ctx.fillStyle = '#A4A';
+//    ctx.arc(150,85,40,0,2*Math.PI);
+//    ctx.fill();
+
+    </script>
+</body>
+
+</html>

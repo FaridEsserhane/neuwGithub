@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+
 html, body {
     font-size: 14px;
 }
@@ -8,8 +9,8 @@ body{
     letter-spacing: 0.2;
     font-family: 'Ubuntu', sans-serif;
 }
+
 .header{
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -47,7 +48,10 @@ body{
 .header-nav a:hover {
     text-decoration: underline;
 }
-
+.footer{
+    background: gray;
+    padding: 10px 20px;
+}
 .main{
     font-size: 20px;
 }
