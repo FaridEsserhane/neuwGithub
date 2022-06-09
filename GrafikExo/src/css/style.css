@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu');
 
 html, body {
-    font-size: 16px;
+    font-size: 10px;
 }
 body{
     margin: 0;
@@ -9,7 +9,7 @@ body{
     letter-spacing: 0.2;
     font-family: 'Ubuntu', sans-serif;
 }
-
+/*
 .header{
     top: 0;
     left: 0;
@@ -70,4 +70,4 @@ body{
 }
 hr{
     clear: both;
-}
+}*/
