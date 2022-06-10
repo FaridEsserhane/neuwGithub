@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            td {
+                border: 2px solid black;
+                padding: 10px 80px 10px 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" id="form">
+            <fieldset>
+                <legend>Creation d'un produit</legend>
+                <label for="ref">Référence</label>
+                <input type="text" name="reference" class="formin" id="ref">
+                <label for="libele">Libélé</label>
+                <input type="text" name="libele" class="formin" id="name">
+                <br><br><label for="text"></label>
+                <textarea name="textarea" rows="10" cols="40" class="formin" id="desc"></textarea><br><br>
+                <label for="price">Prix (en €)</label>
+                <input type="number" name="prix" class="formin" id="price">
+                <label for="stocks">Stocks</label>
+                <input type="number" name="stocks" class="formin" id="stock">
+                <button type="button" onclick="manage_form()">Valider</button>
+                </fieldset>
+        </form>
+        <br><br>
+        <fieldset id="mytable">
+            
+        </fieldset>
+    </body>
+<script>
+
+            // FONCTION LOCAL STORAGE
+    let jsonData = {}
+    function manage_form() {
+        let mydata = document.getElementsByClassName('formin');
+        for(i=0; i<mydata.length; i++){
+            jsonData[mydata[i].id]= mydata[i].value ;          
+        }
+        let myolddata = localStorage.getItem("entrepot");
+        myolddata = JSON.parse(myolddata)
+        myolddata.push(jsonData)
+        localStorage.setItem("entrepot",JSON.stringify(myolddata))
+        createTable()
+    }
+    // CREATION DE TABLEAU
+    let mybody = document.getElementsByTagName('body')[0];
+    function createTable(){
+        let mydata = localStorage.getItem("entrepot")
+        mydata = JSON.parse(mydata)
+        let table_container = document.getElementById("mytable")
+        let table_concat = `<table>
+                            <tr>
+                            <th>ref</th>
+                            <th>name</th>
+                            <th>desc</th>
+                            <th>price</th>
+                            <th>stock</th>
+                            </tr>` ; 
+        for(i=0; i<mydata.length ; i++){
+            table_concat += "<tr>"
+            table_concat += `<td>${mydata[i].ref}</td>
+            <td>${mydata[i].name}</td>
+            <td>${mydata[i].desc}</td>
+            <td>${mydata[i].price}</td>
+            <td>${mydata[i].stock}</td>`    
+    //    console.log(mydata[i])
+        table_concat += "</tr>"
+        }   
+        table_concat += "</table>"
+        table_container.innerHTML = table_concat
+        console.log(mydata)
+    }
+         createTable()   
+  //  console.log(myolddata)
+   // FIN FONCTION PRINCIPALE
+   
+  
+
+</script>
+</html>
