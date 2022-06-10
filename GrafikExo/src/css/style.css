@@ -33,9 +33,9 @@ body{
     z-index: 4;
 }
 .header-nav {
-    margin:  20px 0;
+    overflow: hidden;
+    margin-top:  10px;
     text-align: center;
-    right: 0;
     z-index: 3;
 }
 .header-nav a {
@@ -43,13 +43,20 @@ body{
     width: 25%;
     color: inherit;
     text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.header-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 .header-nav a:hover {
     text-decoration: underline;
 }
 
 .main{
-    font-size: 20px;
+    position: relative;
+    background: lightgray;
+    padding: 20px;
+    font-size: 16px;
 }
 .button {
     color:  #FFF;

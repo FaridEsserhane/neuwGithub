@@ -15,9 +15,28 @@
 
 <body>
 
-    <canvas id="LineCanvas" width="500" he1ight="200"></canvas>  
+    <canvas id="LineCanvas" width="500" height="200"></canvas>  
     <script>
-        var steps = 5 ;
+        function construct(x,y){
+       
+
+            let canvas = document.getElementById("LineCanvas");
+            let ctx = canvas.getContext("2d");
+
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 2;
+            ctx.moveTo(x, y);
+
+            for (let i = 1; i < 10; i++) {
+                
+                ctx.lineTo(x+(25*i), y+(100*i));
+                ctx.moveTo(x+(25*i), y);
+                
+
+
+            }ctx.stroke();
+        }
+            construct(50, 50)
         /*
         function draw_Line(x) {
             let canvas = document.getElementById("LineCanvas");
@@ -31,16 +50,16 @@
             draw_Line(10)
 */
    
-                let canvas = document.getElementById("LineCanvas");
-                let ctx = canvas.getContext("2d");
-                ctx.strokeStyle = "#000000";
-                ctx.lineWidth = 2;
-
-                function jall(x){
-                    ctx.lineTo(x, 250);
-                    ctx.moveTo(x, 50);
-                }
-                console.log(jall(10))
+//                let canvas = document.getElementById("LineCanvas");
+//                let ctx = canvas.getContext("2d");
+//                ctx.strokeStyle = "#000000";
+//                ctx.lineWidth = 2;
+//
+//                function jall(x){
+//                    ctx.lineTo(x, 250);
+//                    ctx.moveTo(x, 50);
+//                }
+//                console.log(jall(10))
 //                if (height >= 1) {
 //                    // Move a tower of height-1 to the buffer peg, using the destination peg.
 //                    //stepsToSolveHanoiT(height - 1, srcP, bufferP, desP);
