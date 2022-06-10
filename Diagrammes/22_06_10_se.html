@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule</title>
+</head>
+
+<body>
+    <article>
+        <p>
+            <strong>Enoncé :</strong>
+        </p>
+        <p>Dans un fichier index.html créer un formulaire contenant une zone de saisie pour le nom, le revenu et un
+            bouton OK pour soumettre le formulaire.
+            Le but de ce formulaire est de permettre le calcul de l’impôt pour une personne. Le taux de l’impôt est de
+            15% pour des revenus inférieurs à 15 000 euros et de 20 % pour des revenus supérieurs à 15 000.
+            Une fois le formulaire envoyé grâce au bouton OK, une phrase s’affiche du style « Mr Durant votre impôt est
+            de 600 euros ».
+            Le programme doit obligatoirement contenir une classe Impot avec un constructeur, une méthode AfficheImpot()
+            qui retourne une chaîne contenant le message à afficher (« Mr Durant votre impôt est de 600 euros » par
+            exemple) et une méthode CalculImpôt() qui retourne le montant de l’impôt suivant le revenu.
+            Les taux de l’impôt (20% et 15%) devront être définis dans des constantes.
+        </p>
+        <fieldset>
+            <legend>Formulaire</legend>
+            <label for="name">Nom</label>
+            <input type="text" name="name" id="text">
+            <label for="revenu">Revenues</label>
+            <input type="number" name="revenu" id="revenu">
+            <button id="button">Valider</button>
+        </fieldset>
+        <div id="monInput"></div>
+    </article>
+</body>
+<script>
+    class Impots {
+        constructor(revenu, nom) {
+            this.rev = parseInt(revenu)
+            this.nom = nom
+            //console.log(this.rev)
+        }
+        calcul_impot() {
+            if (this.rev < 15000)
+                return this.rev * 0.15
+            return this.rev * 0.2
+        }
+        affiche_impot() {
+            return `Mr ${this.nom}, votre impot est de ${this.calcul_impot()}`
+        }
+    }
+    document.getElementById('button').addEventListener('click', function () {
+        let name = document.getElementById('text').value
+        let revenu = document.getElementById('revenu').value
+        let mytax = new Impots(revenu, name)
+        document.getElementById('monInput').innerText = mytax.affiche_impot()
+    })
+</script>
+
+
+
+
+</html>
