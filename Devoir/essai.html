@@ -11,46 +11,10 @@
 <body>
     <article>
         <em><h2><strong>Objectif : </strong>Ecrire un programme orienté objets en JS qui permet de gérer une pharmacie. </h2></em>
-        <ol>
-            <li>
-                La pharmacie gère des clients et des médicaments. Un client est caractérisé par un nom et un crédit. Le crédit représente la somme que ce client doit à la pharmacie. Le crédit peut être négatif si le client a versé plus d'argent que le montant. Un médicament est caractérisé par un nom (chaîne de caractères), un prix (nombre) et un stock (entier). Les méthodes à compléter auront les caractéristiques suivantes: 
-
-                <ul>
-                    <li>client</li>
-                    <li>medoc</li>
-                </ul>
-
-                <!--Client-->
-                <ul>
-                    <li>nom string</li>
-                    <li>credit number</li>
-                </ul>
-                <!--médicament-->
-                <ul>
-                    <li>nom string</li>
-                    <li>prix number</li>
-                    <li>stock entier</li>
-                </ul>
-            </li>
-            <li>
-                affichage(...) permet d'afficher les clients et leurs crédits respectifs ainsi que les médicaments et leurs stocks respectifs. 
-            </li>
-            <li>
-                approvisionnement(..) permet d'approvisionner le stock d'un médicament. Le nom du médicament à approvisionner ainsi que la quantité à ajouter au stock doivent être lus depuis une entrée (terminal ou input html). Lorsque le nom du médicament est introduit, il faut vérifier qu'il s'agit bien d'un nom connu dans la liste des médicaments de la pharmacie. Le programme doit boucler jusqu'à introduction d'un nom correct. Cette procédure de vérification sera prise en charge par la méthode lireMedicament(..)  
-            </li>
-            <li>
-                achat(..) permet de traiter un achat fait par un client. l'achat porte sur un médicament donné dans une quantité donnée. Pour cette transaction le client paie un certain prix. Une opération d'achat aura pour effet de déduire la quantité achetée du stock du médicaments correspondant et d'augmenter le crédit du client (d'un montant équivalent au montant de l'achat moins la somme payée). La quantité achetée et le montant payé sont aussi lus depuis le terminal. Ils seront supposés corrects. 
-            </li>
-            <li>
-                quitter(..) affiche le message "programme terminé!". 
-            </li>
-            <li>
-                -Vous définirez une méthode auxiliaire lireClient(..) prenant comme paramètre un liste de clients. Elle permettra de lire le nom d'un client depuis une entrée et de vérifier si ce client existe dans la liste des clients. Dans ce cas le client sera retourné. Cette méthode doit boucler jusqu'à ce qu'un client soit trouvé. Elle sera utilisée par la méthode achat(..). Une méthode similaire, lireMedicament(..) sera fournie pour les médicaments. Elle sera utilisée par les méthodes achat(..) et approvisionnement(..). 
-            </li>
-            <li>
-                Vous êtes libre de définir, en plus de ces méthodes, toutes celles que vous jugerez nécessaires, et d'utiliser tout format de persistance de données que vous souhaitez.
-            </li>
-        </ol>
+        la pharmacie à un nom est une adress , num de tel
+        nom_pharm
+        tel_parm
+        adress_pharm
     </article>
 </body>
 <script>

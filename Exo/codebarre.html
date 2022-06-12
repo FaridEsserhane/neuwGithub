@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Barre</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Enterer vos numéro<exp>*</exp></legend>
+        <label for="enter_num">Vos 20 num</label>
+        <input type="text" id="enter_num" maxlength="20" style="width: 300px;"><br>
+        <button id="go" onclick="input_barre()">Envoyer</button>
+
+        <br>
+        <exp>*</exp><em>Obligatoire</em>
+    </fieldset>
+    <canvas id="LineCanvas" width="500" height="200"></canvas>  
+</body>
+<script>
+    function input_barre(){
+        let mynumber = document.getElementById("enter_num").value;
+        console.log(mynumber.innerText)
+    }
+</script>
+
+<!--
+    <script>
+        function construct(x,y){
+            let canvas = document.getElementById("LineCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 9;
+            ctx.moveTo(x, y);
+            //console.log(ctx)
+            
+            for (let i = 1; i < 20; i++){
+                ctx.lineWidth = 2;
+                ctx.moveTo(x+(20*i), y+(100*i));
+                ctx.lineTo(x+(20*i), y);
+            }
+            ctx.stroke();
+        }
+        construct(50, 50)
+ /*
+            let canvas = document.getElementById("LineCanvas");
+            let ctx = canvas.getContext("2d");
+
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 2;
+            ctx.moveTo(x, y);
+
+            for (let i = 1; i < 10; i++) {
+                
+                ctx.lineTo(x+(25*i), y+(100*i));
+                ctx.moveTo(x+(25*i), y);
+                
+
+
+            }ctx.stroke();
+        }
+            construct(50, 50)
+       
+        function draw_Line(x) {
+            let canvas = document.getElementById("LineCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 2;
+            ctx.moveTo(x+steps, 50);
+            ctx.lineTo(x+steps, 250);
+            ctx.stroke();
+            }
+            draw_Line(10)
+*/
+   
+//                let canvas = document.getElementById("LineCanvas");
+//                let ctx = canvas.getContext("2d");
+//                ctx.strokeStyle = "#000000";
+//                ctx.lineWidth = 2;
+//
+//                function jall(x){
+//                    ctx.lineTo(x, 250);
+//                    ctx.moveTo(x, 50);
+//                }
+//                console.log(jall(10))
+//                if (height >= 1) {
+//                    // Move a tower of height-1 to the buffer peg, using the destination peg.
+//                    //stepsToSolveHanoiT(height - 1, srcP, bufferP, desP);
+//                    // Move the remaining disk to the destination peg.
+//                    console.log( "STEP : " , steps ,  height);
+//                    // Move the tower of `height-1` from the `buffer peg` to the `destination peg` using the `source peg`.        
+//                    stepsToSolveHanoiT(height - 1);
+//                    console.log(ctx.moveTo(x+steps, 50));
+//                    ctx.lineTo(x+steps, 250);
+//                    ctx.stroke();
+//                    console.log(ctx)
+//                    steps++ ;
+//                }
+//                return;
+//            }
+//            stepsToSolveHanoiT(4,steps);
+
+        //let canvas = document.getElementById("LineCanvas");
+        //let ctx = canvas.getContext("2d");
+//
+        //ctx.strokeStyle = "#000000";
+        //ctx.lineWidth = 2;
+        //ctx.moveTo(10, 50);
+        //ctx.lineTo(10, 250);
+        //ctx.moveTo(15, 50);
+        //ctx.lineTo(15, 250);
+        //ctx.moveTo(20, 50);
+        //ctx.lineTo(20, 250);
+        //ctx.moveTo(25, 50);
+        //ctx.lineTo(25, 250);
+//
+        //ctx.moveTo(30, 50);
+        //ctx.lineTo(30, 250);
+        //ctx.moveTo(35, 50);
+        //ctx.lineTo(35, 250);
+        //ctx.moveTo(40, 50);
+        //ctx.lineTo(40, 250);
+        //ctx.moveTo(45, 50);
+        //ctx.lineTo(45, 250);
+
+        //faire une boucle qui change que les de line et move avec un step
+
+        //function linedrow(step){
+            //let stepDrox = 
+        //};
+        
+
+-->
+    </script>
+
+</html>

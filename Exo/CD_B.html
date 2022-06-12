@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+    <link rel="stylesheet" href="Media2.css">
+    </head>
+    <body>
+        <label for="ref">Numero de serie</label>
+        <input type="number" name="numero" id="num">
+        <button id="button">Valider</button>
+        <br>
+        <br>
+        <canvas id="mycanvas" width="500" height="250" style="border : 2.2px solid rgb(245, 196, 83)">
+            Vous n'avez pas de canvas, changez de navigateur
+        </canvas>
+    </body>
+    
+    <script>
+        let canvas = document.getElementById("mycanvas") //recup le canvas
+        let button = document.getElementById("button")
+        button.addEventListener("click", refreshPage)
+ 
+        function refreshPage(){
+        window.location.reload();
+        }
+ 
+        ctx = canvas.getContext('2d') //Défini le context en 2D
+ 
+        ctx.beginPath(); //-------------------------------------- Début du bloc de tracé
+        ctx.strokeStyle = "black" //couleur de la ligne 
+        ctx.lineWidth = 3 ;   
+        
+        function size() {
+            let number = document.getElementById("num").value
+           // let chiffre = [1,2,3,4,5,6,7,8,9]
+ 
+            for(i=1 ; i<=number.length ; i++){
+                ctx.moveTo(10*[i],5); //point de depart
+                ctx.lineTo(10*[i],240) //point d arriver
+ 
+               /* for(j=1 ; j<=chiffre.length ; j++){
+                    ctx.lineWidth = +[j] */
+                }
+            
+            console.log(number)
+            }
+ 
+        size()
+        ctx.stroke();//------------------------------------------ Fin du bloc de tracé
+    </script>
+</html>
