@@ -17,10 +17,13 @@ for (i = 0; i < 20; i++) {
 
 
 for (j = 0; j < 20; j++) {
-    let mymedoc = medoc_name[Math.floor(Math.random()*medoc_name.length)] + "-" + medoc_condition[Math.floor(Math.random()*medoc_condition.length)]
+    let mymedoc = medoc_name[Math.floor(Math.random()*medoc_name.length)] + " / " + medoc_condition[Math.floor(Math.random()*medoc_condition.length)]
     main_medoc_list[j] = new Medoc(j,mymedoc,Math.random()*100,100);
     
     
 }
 
 console.table(main_medoc_list)
+
+// console.log(pharm);
+//localStorage.setItem("data", JSON.stringify(pharm));
