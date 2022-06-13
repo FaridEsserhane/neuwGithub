@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--<link rel="stylesheet" href="pharma.css">-->
+</head>
+
+<body>
+    <div>
+        <fieldset class="largeur">
+            <legend>
+                <h1 class="police">Affichage Client</h1>
+            </legend>
+            <h2 class="police">Entrez le nom du client</h2>
+            <input id="clientname" type="text" value="">
+            <button id="button1">Valider</button>
+            <div id="Result1"></div>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset class="largeur">
+            <legend>
+                <h1 class="police">Affichage Medicament</h1>
+            </legend>
+            <h2 class="police">Entrez le nom du Medicament</h2>
+            <input id="Medocname" type="text" value="">
+            <button id="button2">Valider</button>
+            <div id="Result2"></div>
+        </fieldset>
+    </div>
+
+    <div>
+        <fieldset class="largeur">
+            <legend>
+                <h1 class="police">Approvisionnement</h1>
+            </legend>
+            <h2 class="police">Medoc a Re-approvisionner</h2>
+            <input id="ApproMedoc" type="text" value="">
+            <button id="button4">Valider</button>
+            <div id="Result4"></div>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset class="largeur">
+            <legend>
+                <h1 class="police">Achat</h1>
+            </legend>
+            <h2 class="police">Medoc désiré</h2>
+            <input id="AchatMedoc" type="text" value="">
+            <button id="button5">Valider</button>
+            <div id="Result5"></div>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset class="largeur">
+            <legend>
+                <h1 class="police">Quitter</h1>
+            </legend>
+            <button id="button3">Valider</button>
+            <div id="quit"></div>
+        </fieldset>
+    </div>
+</body>
+
+<script>
+    class CLIENT {
+        constructor(nomclient, creditclient) {
+            this.nomclient = nomclient
+            this.creditclient = parseInt(creditclient)
+        }
+    }
+
+    let Client1 = new CLIENT("Claire", 20)
+    let Client2 = new CLIENT("Christophe", 0)
+    let Client3 = new CLIENT("Albert", 0)
+    let Client4 = new CLIENT("Jennifer", 50)
+    let databaseClient = [Client1, Client2, Client3, Client4]
+
+    let button = document.getElementById("button1")
+    button.addEventListener("click", affiche_client)
+
+    function affiche_client() {
+        let result = document.getElementById("Result1")
+        let nom = document.getElementById("clientname").value
+        for (i = 0; i < databaseClient.length; i++) {
+
+            if (nom == databaseClient[i].nomclient) {
+                result.style.visibility = "visible"
+                return result.innerText = databaseClient[i].nomclient + " a un credit de " + databaseClient[i]
+                    .creditclient +
+                    " €" //RETURN tres important car il permet d arreter la boucle quand il trouve ce qu'il a cherché
+                //break
+            } else {
+                result.innerText = "client inconnu"
+            }
+        }
+        //console.log(databaseClient[i].nomclient)
+    }
+
+    class MEDICAMENT {
+        constructor(nomMedoc, prixMedoc, stockMedoc) {
+            this.nomMedoc = nomMedoc
+            this.prixMedoc = parseInt(prixMedoc)
+            this.stockMedoc = parseInt(stockMedoc)
+        }
+
+        affiche_Medoc() {
+            let result2 = document.getElementById("Result2") //zone d affichage
+            let medoc = document.getElementById("Medocname").value //input medoc tapé
+
+            for (let j = 0; j < databaseMedoc.length; j++) {
+
+                if (medoc == databaseMedoc[j].nomMedoc) {
+                    result2.style.visibility = "visible"
+                    return result2.innerText = databaseMedoc[j].nomMedoc + ": prix : " + databaseMedoc[j]
+                        .prixMedoc + "€ stock : " + databaseMedoc[j]
+                        .stockMedoc //RETURN tres important car il permet d arreter la boucle quand il trouve ce qu'il a cherché
+                    //break
+                } else {
+                    result2.innerText = "Medoc inconnu"
+                }
+            } //Fin de boucle
+
+        } //Fin affiche_Medoc
+    } //fin class MEDICAMENT
+    let Medoc1 = new MEDICAMENT("Aspirine", 5, 20)
+    let Medoc2 = new MEDICAMENT("Morphine", 25, 20)
+    let Medoc3 = new MEDICAMENT("Kalmant", 15, 50)
+    let Medoc4 = new MEDICAMENT("Betadine", 3, 18)
+    let databaseMedoc = [Medoc1, Medoc2, Medoc3, Medoc4]
+
+    let button2 = document.getElementById("button2")
+    button2.addEventListener("click", Medoc1.affiche_Medoc)
+
+    let button3 = document.getElementById("button3")
+    button3.addEventListener("click", refreshPage)
+
+    function refreshPage() {
+        alert("Programme Terminé")
+        location.reload();
+    }
+</script>
+
+</html>
