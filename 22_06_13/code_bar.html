@@ -7,17 +7,19 @@
     <title>Code Bare</title>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas" width="800" height="200"></canvas>
     <script>
         let valeurs = [];
         let max_val = 19;
-        for (i =0;i<20;i++) {
+        let nbr_val = 20;
+        for (i =0;i<nbr_val;i++) {
             valeurs[i] = Math.floor(Math.random()*max_val)+1
         }
         console.log(valeurs);
 
         let c = document.getElementById("canvas");
         let ctx = c.getContext("2d");
+        ctx.fillStyle="green";
         
         let offsetx = 10 ;
         let offset = 10 ;

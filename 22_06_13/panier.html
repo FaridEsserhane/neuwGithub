@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mon joli panier</title>
+    <style>
+        .stock , td, th {border:1px solid black; text-align:center;}
+        th > tr > td {font-weight:bold;}
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Nouveau produit</legend>
+        Nom/libelle: <input type="text" id="name" class="formin"><br>
+        Description: <input type="text" id="desc" class="formin"><br>
+        Reference: <input type="text" id="ref" class="formin"><br>
+        Prix: <input type="text" id="price" class="formin"><br>
+        Qté/Stock: <input type="text" id="stock" class="formin"><br>
+        Image/path: <input type="text" id="img" class="formin"><br>
+        <input type="button" value="GO!" id="go" >
+    </fieldset>
+<br><br>
+    <fieldset>
+        <legend>Le Stock de ma boutique</legend>
+        <table class="stock">
+            <tr>
+                    <th>Ref</th><th>Nom</th><th>Desc</th><th>Prix</th><th>Qté</th><th>Img path</th><th>Ajout</th><th>Suppr</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>ZB67</td>
+                    <td>Truc</td>
+                    <td>un joli truc</td>
+                    <td>12</td>
+                    <td>123</td>
+                    <td>img path</td>
+                    <td><input type="button" id="add" value="ADD">
+                    </td><td><input type="button" id="suppr" value="SUPP">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <script>
+        // action du bouton d'envoi
+        let mybutton = document.getElementById("go");
+        mybutton.addEventListener("click",manage_form);
+        
+        function manage_form() {
+            // je recupere tous les inputs concernés (le formulaire)
+            let mydata = document.getElementsByClassName("formin");
+            // j'itere sur chaque element du form pour recuperer son id 
+            // et sa valeur => json : cle : valeur 
+            let jsonData = {} ;
+            for(i=0;i<mydata.length;i++){
+               // console.log( mydata[i].id , mydata[i].value );
+                jsonData[mydata[i].id] =  mydata[i].value ;
+             }
+            // je recupere les datas deja stockées 
+            let myolddata = localStorage.getItem("entrepot");
+            // je les transforme en json
+            myolddata = JSON.parse(myolddata);
+            // j'ajoute le nouveau produit 
+            myolddata.push(jsonData)
+            // je remets le tableau dans le local storage 
+            localStorage.setItem("entrepot",JSON.stringify(myolddata));
+            //console.log(mydata);
+        }
+    </script>
+</body>
+</html>
