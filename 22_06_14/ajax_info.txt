@@ -1,0 +1,4 @@
+{
+"mondiv":"<div>un div</div>",
+"monp":"<p>test dans un paragraphe</p>"
+}
